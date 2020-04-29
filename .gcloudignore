@@ -1,0 +1,5 @@
+.git
+.editorconfig
+*_test.go
+docs/*
+README.md

@@ -1,0 +1,15 @@
+runtime: go113
+instance_class: F1
+
+main: github.com/jimen0/differer/cmd/differer
+
+default_expiration: 1h
+automatic_scaling:
+  min_idle_instances: 0
+  max_idle_instances: 1
+  min_pending_latency: 30ms
+  max_pending_latency: 3000ms
+  max_concurrent_requests: 4
+
+env_variables:
+  DIFFERER_CONFIG: "config.yaml"

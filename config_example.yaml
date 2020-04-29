@@ -1,0 +1,6 @@
+---
+runners:
+  golang: http://golang-parseurl:8082/
+  python3_urllib_urlparse: http://python-parseurl:8083/
+  node14_url: http://node-parseurl:8084/
+timeout: 10s

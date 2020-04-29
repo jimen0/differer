@@ -1,0 +1,12 @@
+syntax = "proto3";
+option go_package = ".;scheduler";
+
+message Job {
+    string address = 1;
+}
+
+message Result {
+    string id = 1;
+    string value = 2;
+    string error = 3;
+}
