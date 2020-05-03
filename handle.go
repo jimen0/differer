@@ -76,13 +76,12 @@ func HandleInput(runners []Runner) http.HandlerFunc {
 			}
 		}
 
-		log.Printf("Got a total of %d addresses", len(i.Addrs))
-		log.Printf("Configured to launch %d runners", len(runners))
-		log.Printf("That makes a total of %d tasks", len(runners)*len(i.Addrs))
-
 		tasks := len(i.Addrs) * len(runners)
+		log.Printf("Got %d addresses for %d runners. Total tasks is %d", len(i.Addrs), len(runners), tasks)
+
 		var wg sync.WaitGroup
 		wg.Add(tasks)
+
 		results := make(chan addressResult, tasks)
 		for _, addr := range i.Addrs {
 			log.Printf("Creating job for %s", addr)
